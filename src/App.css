@@ -29,7 +29,11 @@
 }
 
 .istanbul-button {
-    font-size: calc(10px + 2vmin);
+    font-size: calc(10px + 4vmin);
+}
+
+.istanbulTilePicture {
+    height: 60vmin;
 }
 
 @keyframes App-logo-spin {

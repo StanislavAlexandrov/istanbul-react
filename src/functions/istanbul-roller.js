@@ -38,30 +38,42 @@ const allTilesDict = {
     '12 - Police Station': policeStation12,
 };
 
+const fabricWarehouse2S = require('../img/2-fabric-warehouse.jpg').default;
+const spiceWarehouse3S = require('../img/3-spice-warehouse.jpg').default;
+const fruitWarehouse4S = require('../img/4-fruit-warehouse.jpg').default;
+const postOffice5S = require('../img/5-post-office.jpg').default;
+const caravansary6S = require('../img/6-caravansary.jpg').default;
+const fountain7S = require('../img/7-fountain.jpg').default;
+const blackMarket8S = require('../img/8-black-market.jpg').default;
+const teaHouse9S = require('../img/9-teahouse.jpg').default;
+const largeMarket10S = require('../img/10-large-market.jpg').default;
+const smallMarket11S = require('../img/11-small-market.jpg').default;
+const policeStation12S = require('../img/12-police-station.jpg').default;
+
 const allTilesDictSafari = {
-    '2 - Fabric Warehouse': 'img/2-fabric-warehouse.jpg',
-    '3 - Spice Warehouse': 'img/3-spice-warehouse.jpg',
-    '4 - Fruit Warehouse': 'img/4-fruit-warehouse.jpg',
-    '5 - Post Office': 'img/5-post-office.jpg',
-    '6 - Caravansary': 'img/6-caravansary.jpg',
-    '7 - Fountain': 'img/7-fountain.jpg',
-    '8 - Black Market': 'img/8-black-market.jpg',
-    '9 - Teahouse': 'img/9-teahouse.jpg',
-    '10 - Large Market': 'img/10-large-market.jpg',
-    '11 - Small Market': 'img/11-small-market.jpg',
-    '12 - Police Station': 'img/12-police-station.jpg',
+    '2 - Fabric Warehouse': fabricWarehouse2S,
+    '3 - Spice Warehouse': spiceWarehouse3S,
+    '4 - Fruit Warehouse': fruitWarehouse4S,
+    '5 - Post Office': postOffice5S,
+    '6 - Caravansary': caravansary6S,
+    '7 - Fountain': fountain7S,
+    '8 - Black Market': blackMarket8S,
+    '9 - Teahouse': teaHouse9S,
+    '10 - Large Market': largeMarket10S,
+    '11 - Small Market': smallMarket11S,
+    '12 - Police Station': policeStation12S,
 };
 
 export default function myFunction() {
     let resultingTile = randomFrom(allTiles);
-    document.querySelector('#result').innerHTML = resultingTile;
+    document.querySelector('.istanbul-result').innerHTML = resultingTile;
     let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     console.log(iOS);
     if (iOS) {
-        document.querySelector('#tile-picture').srcset =
+        document.querySelector('.istanbulTilePicture').srcset =
             allTilesDictSafari[resultingTile];
     } else {
-        document.querySelector('#tile-picture').srcset =
+        document.querySelector('.istanbulTilePicture').srcset =
             allTilesDict[resultingTile];
     }
 }
